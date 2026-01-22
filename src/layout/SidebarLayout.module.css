@@ -1,8 +1,6 @@
 .container {
   background-color: #fdf6f0;
-  display: flex;
 }
-
 .sidebar {
   background-color: #7d5a50;
   position: fixed;
@@ -43,12 +41,10 @@
 .inactive_link {
   border-left: 4px solid transparent;
 }
-
 .inactive_link:hover {
   border-left: 4px solid #e5b299;
   background-color: #b4846c;
 }
-
 .active_link {
   background-color: #b4846c;
   border-left: 4px solid #e5b299;

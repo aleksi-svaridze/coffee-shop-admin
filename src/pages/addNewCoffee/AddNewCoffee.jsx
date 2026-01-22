@@ -1,9 +1,14 @@
-import React from "react";
+import Header from "../../components/header/Header";
 
 function AddNewCoffee() {
   return (
-    <main className="main ">
-      <h1>Add New Coffee</h1>
+    <main className="main">
+      <Header
+        btnLabel={"Back to dashboard"}
+        headerTitle={"Add New Coffee"}
+        btnBgColor="#7D5A50"
+        path={"/"}
+      />
     </main>
   );
 }
