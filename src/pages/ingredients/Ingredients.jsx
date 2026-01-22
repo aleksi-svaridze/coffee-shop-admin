@@ -6,7 +6,7 @@ function Ingredients() {
       <Header
         btnLabel={"Back to dashboard"}
         headerTitle={"Manage Ingredients"}
-        btnBgColor="#7D5A50"
+        btnBgColor="#B4846C"
         path={"/"}
       />
     </main>

@@ -6,7 +6,7 @@ function AddNewCoffee() {
       <Header
         btnLabel={"Back to dashboard"}
         headerTitle={"Add New Coffee"}
-        btnBgColor="#7D5A50"
+        btnBgColor="#B4846C"
         path={"/"}
       />
     </main>

@@ -1,6 +1,4 @@
-import CoffeeCard from "../../components/coffeeCard/CoffeeCard";
 import Header from "../../components/header/Header";
-import Styles from "./Dashboard.module.css";
 
 function Dashboard() {
   return (
@@ -14,12 +12,8 @@ function Dashboard() {
       />
 
       {/* Table */}
-      <div>Tables here</div>
 
       {/* Coffee Cards  */}
-      <div>
-        <CoffeeCard />
-      </div>
     </main>
   );
 }
