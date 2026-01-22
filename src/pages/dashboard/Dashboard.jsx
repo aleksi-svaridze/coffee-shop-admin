@@ -1,7 +1,40 @@
+import { useState } from "react";
 import Header from "../../components/header/Header";
 import Table from "../../components/table/Table";
 
 function Dashboard() {
+  const [data] = useState([
+    {
+      id: "cof_sample1",
+      name: "Ethiopian Yirgacheffe",
+      origin: "Ethiopia",
+      caffeine: "120mg",
+      price: "$4.99",
+    },
+    {
+      id: "cof_sample2",
+      name: "Colombian Supremo",
+      origin: "Colombia",
+      caffeine: "130mg",
+      price: "$5.49",
+    },
+    {
+      id: "cof_sample3",
+      name: "Kenyan AA",
+      origin: "Kenya",
+      caffeine: "125mg",
+      price: "$5.99",
+    },
+  ]);
+
+  const deleteCoffee = (id) => {
+    console.log("Delete coffee with ID:", id);
+  };
+
+  const editCoffee = (id) => {
+    console.log("Edit coffee with ID:", id);
+  };
+
   return (
     <main className="main">
       {/* Header */}
@@ -13,7 +46,7 @@ function Dashboard() {
       />
 
       {/* Table */}
-      <Table />
+      <Table data={data} deleteCoffee={deleteCoffee} editCoffee={editCoffee} />
       {/* Coffee Cards  */}
     </main>
   );

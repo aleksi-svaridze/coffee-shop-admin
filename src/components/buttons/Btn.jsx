@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import Styles from "./Btn.module.css";
 
-function Btn({ bgColor, label, path }) {
+function Btn({ bgColor, label, path, action, id }) {
   return (
-    <Link to={path} className={Styles.btn} style={{ backgroundColor: bgColor }}>
+    <Link
+      to={id ? "#" : path}
+      onClick={() => action(id)}
+      className={Styles.btn}
+      style={{ backgroundColor: bgColor }}
+    >
       {label}
     </Link>
   );
