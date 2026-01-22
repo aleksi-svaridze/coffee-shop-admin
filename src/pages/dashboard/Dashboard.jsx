@@ -46,7 +46,16 @@ function Dashboard() {
       />
 
       {/* Table */}
-      <Table data={data} deleteCoffee={deleteCoffee} editCoffee={editCoffee} />
+      <Table
+        value_1={"ID"}
+        value_2={"Name"}
+        value_3={"Origin"}
+        value_4={"Caffeine"}
+        value_5={"Price"}
+        data={data}
+        deleteCoffee={deleteCoffee}
+        editCoffee={editCoffee}
+      />
       {/* Coffee Cards  */}
     </main>
   );

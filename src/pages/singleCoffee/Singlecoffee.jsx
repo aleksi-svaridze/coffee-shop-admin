@@ -5,7 +5,7 @@ import Header from "../../components/header/Header";
 function SingleCoffee() {
   const params = useParams();
 
-  console.log("Coffee ID:", params);
+  console.log(params);
   return (
     <main className="main">
       <Header
@@ -16,7 +16,6 @@ function SingleCoffee() {
       />
       <section className={Styles.coffee__container}>
         <h2>Coffee ID: {params.id}</h2>
-        {/* Additional coffee details can be displayed here */}
       </section>
     </main>
   );
