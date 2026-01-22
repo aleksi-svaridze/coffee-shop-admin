@@ -1,4 +1,5 @@
 import Header from "../../components/header/Header";
+import Table from "../../components/table/Table";
 
 function Dashboard() {
   return (
@@ -12,7 +13,7 @@ function Dashboard() {
       />
 
       {/* Table */}
-
+      <Table />
       {/* Coffee Cards  */}
     </main>
   );
