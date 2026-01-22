@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Styles from "./Sidebarlayout.module.css";
+import Styles from "./SidebarLayout.module.css";
 
 function SidebarLayout() {
   return (
