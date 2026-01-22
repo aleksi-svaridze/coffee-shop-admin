@@ -1,11 +1,11 @@
-import Styles from "./Singlecoffee.module.css";
+import Styles from "./SingleCoffee.module.css";
 import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 
-function Singlecoffee() {
+function SingleCoffee() {
   const params = useParams();
 
-  console.log("Coffee ID:", params.id);
+  console.log("Coffee ID:", params);
   return (
     <main className="main">
       <Header
@@ -22,4 +22,4 @@ function Singlecoffee() {
   );
 }
 
-export default Singlecoffee;
+export default SingleCoffee;

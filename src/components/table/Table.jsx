@@ -20,18 +20,22 @@ function Table({ data, deleteCoffee, editCoffee }) {
           <div className={Styles.cell}>{item.caffeine}</div>
           <div className={Styles.cell}>{item.price}</div>
           <div className={Styles.table__flex_cell}>
-            <Btn bgColor={"#B4846C"} label={"View"} path={`/${item.id}`} />
+            <Btn
+              bgColor={"#B4846C"}
+              label={"View"}
+              path={`/coffee/${item.id}`}
+            />
             <Btn
               bgColor={"#7d5a50"}
               label={"Edit"}
-              path={`/${item.id}`}
+              path={"#"}
               id={item.id}
               action={editCoffee}
             />
             <Btn
               bgColor={"#e74c3c"}
               label={"Delete"}
-              path={`/${item.id}`}
+              path={"#"}
               id={item.id}
               action={deleteCoffee}
             />

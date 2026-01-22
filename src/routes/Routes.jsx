@@ -17,7 +17,7 @@ export const Routes = [
       },
       {
         element: <SingleCoffee />,
-        path: ":id",
+        path: "coffee/:id",
       },
       {
         element: <AddNewCoffee />,
