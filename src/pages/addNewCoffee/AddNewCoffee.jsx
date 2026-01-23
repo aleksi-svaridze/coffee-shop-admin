@@ -1,3 +1,4 @@
+import AddNewCoffeeForm from "../../components/forms/addNewCoffeeForm/AddNewCoffeeForm";
 import Header from "../../components/header/Header";
 
 function AddNewCoffee() {
@@ -9,6 +10,7 @@ function AddNewCoffee() {
         btnBgColor="#B4846C"
         path={"/"}
       />
+      <AddNewCoffeeForm />
     </main>
   );
 }

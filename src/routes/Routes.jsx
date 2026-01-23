@@ -3,6 +3,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import AddNewCoffee from "../pages/addNewCoffee/AddNewCoffee";
 import Ingredients from "../pages/ingredients/Ingredients";
 import NotFound from "../pages/notFound/NotFound";
+import SingleItem from "../pages/singleItem/SingleItem";
 
 export const Routes = [
   {
@@ -13,6 +14,10 @@ export const Routes = [
       {
         element: <Dashboard />,
         index: true,
+      },
+      {
+        element: <SingleItem />,
+        path: "coffee/:id",
       },
       {
         element: <AddNewCoffee />,
