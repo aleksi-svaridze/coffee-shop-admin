@@ -1,8 +1,8 @@
-import Styles from "./SingleCoffee.module.css";
+import Styles from "./SingleItem.module.css";
 import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 
-export default function SingleCoffee() {
+export default function SingleItem() {
   const params = useParams();
 
   return (
