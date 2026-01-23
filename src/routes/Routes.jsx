@@ -1,9 +1,9 @@
 import SidabarLayout from "../layout/SidebarLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
-import SingleCoffee from "../pages/singleCoffee/SingleCoffee";
 import AddNewCoffee from "../pages/addNewCoffee/AddNewCoffee";
 import Ingredients from "../pages/ingredients/Ingredients";
 import NotFound from "../pages/notFound/NotFound";
+import SingleItem from "../pages/singleItem/SingleItem";
 
 export const Routes = [
   {
@@ -16,7 +16,7 @@ export const Routes = [
         index: true,
       },
       {
-        element: <SingleCoffee />,
+        element: <SingleItem />,
         path: "coffee/:id",
       },
       {
