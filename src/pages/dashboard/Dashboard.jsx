@@ -18,23 +18,23 @@ function Dashboard() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
-              <th>Country</th>
+              <th>Name</th>
+              <th>Origin</th>
               <th>Caffeine</th>
-              <th>Total Price</th>
+              <th>Price</th>
               <th>Actions</th>
             </tr>
           </thead>
 
           <tbody>
-            {/* MOCK DATA – შემდეგ Context-ით ჩავანაცვლებთ */}
             <tr>
               <td>1</td>
-              <td>Espresso</td>
-              <td>Italy</td>
-              <td>High</td>
-              <td>6 ₾</td>
+              <td>Ethiopian Yirgacheffe</td>
+              <td>Ethiopia</td>
+              <td>120mg</td>
+              <td>$4.99</td>
               <td className={styles.actions}>
+                <button className={styles.view}>View</button>
                 <button className={styles.edit}>Edit</button>
                 <button className={styles.delete}>Delete</button>
               </td>
@@ -42,6 +42,7 @@ function Dashboard() {
           </tbody>
         </table>
       </section>
+      <h2>Coffee-Cards</h2>
 
       {/* Coffee Cards */}
       <section className={styles.cards}>
@@ -50,9 +51,28 @@ function Dashboard() {
             src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
             alt="coffee"
           />
-          <h3>Espresso</h3>
-          <p>Strong and classic Italian coffee</p>
-          <span>6 ₾</span>
+          <h3>Ethiopian Yirgacheffe</h3>
+          <p>
+            A light roasted coffee with bright acidity, and complex fruit and
+            floral notes....
+          </p>
+          <p>
+            <strong>Origin:</strong>
+            "Ethiopia"
+          </p>
+          <p>
+            <strong>Caffeine:</strong>
+            "120mg"
+          </p>
+          <p>
+            <strong>Price:</strong>
+            "$4.99"
+          </p>
+          <div className={styles.card_footer}>
+            <button className={styles.view}>View More</button>
+            <button className={styles.edit}>Edit</button>
+            <button className={styles.delete}>Delete</button>
+          </div>
         </div>
       </section>
     </main>
