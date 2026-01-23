@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "../../components/header/Header";
+import styles from "./Dashboard.module.css";
 import Table from "../../components/table/Table";
+import CoffeeCard from "../../components/coffeeCard/CoffeeCard";
 
 function Dashboard() {
   const [data] = useState([
@@ -10,6 +12,8 @@ function Dashboard() {
       origin: "Ethiopia",
       caffeine: "120mg",
       price: "$4.99",
+      description:
+        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
     },
     {
       id: "cof_sample2",
@@ -17,6 +21,8 @@ function Dashboard() {
       origin: "Colombia",
       caffeine: "130mg",
       price: "$5.49",
+      description:
+        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
     },
     {
       id: "cof_sample3",
@@ -24,20 +30,8 @@ function Dashboard() {
       origin: "Kenya",
       caffeine: "125mg",
       price: "$5.99",
-    },
-    {
-      id: "cof_sample4",
-      name: "Kenyan BB",
-      origin: "Kenya",
-      caffeine: "725mg",
-      price: "$9.99",
-    },
-    {
-      id: "cof_sample5",
-      name: "Africa BB",
-      origin: "Africa",
-      caffeine: "725mg",
-      price: "$9.99",
+      description:
+        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
     },
   ]);
 
@@ -50,16 +44,15 @@ function Dashboard() {
   };
 
   return (
-    <main className="main">
+    <main className={styles.main}>
       {/* Header */}
       <Header
-        btnLabel={"Add new coffee"}
-        headerTitle={"Coffee Dashboard"}
+        btnLabel="Add new coffee"
+        headerTitle="Coffee Dashboard"
         btnBgColor="#7D5A50"
-        path={"/add-coffee"}
+        path="/add-coffee"
       />
 
-      {/* Table */}
       <Table
         value_1={"ID"}
         value_2={"Name"}
@@ -70,7 +63,14 @@ function Dashboard() {
         deleteCoffee={deleteCoffee}
         editCoffee={editCoffee}
       />
-      {/* Coffee Cards  */}
+
+      {/* Coffee Cards */}
+      <h2>Coffee-Cards</h2>
+      <section className={styles.cards}>
+        {data.map((coffee) => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
+        ))}
+      </section>
     </main>
   );
 }

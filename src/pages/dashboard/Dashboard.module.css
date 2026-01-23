@@ -1,1 +1,84 @@
+.main {
+  padding: 24px;
+  background-color: #f6f4f1;
+  min-height: 100vh;
+  margin-left: 250px;
+}
 
+/* TABLE */
+
+.tableSection {
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.table th {
+  background-color: #7d5a50;
+  font-weight: 600;
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.view {
+  background-color: #b4846c;
+  color: white;
+  font-weight: 500;
+
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit {
+  background: #7d5a50;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CARDS */
+h2 {
+  font-size: 1.5em;
+  margin-top: 32px;
+  color: #4a3b36;
+}
+.cards {
+  margin-top: 8px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
