@@ -1,0 +1,32 @@
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table__header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1.5fr;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #7d5a50;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+}
+
+.table__body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1.5fr;
+  padding: 10px 16px;
+  background-color: white;
+  color: #4a3b36;
+}
+.table__body:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+.table__flex_cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
