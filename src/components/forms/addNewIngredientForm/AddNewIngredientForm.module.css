@@ -17,22 +17,21 @@
   margin-bottom: 32px;
 }
 .input,
-.textarea {
+.textarea,
+.select {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
 .input:focus,
-.textarea:focus {
+.textarea:focus,
+select:focus {
   border-color: #565657;
   outline: none;
 }
 
 .textarea {
-  resize: none;
+  resize: vertical;
   height: 150px;
-}
-.input__description {
-  font-size: 14px;
 }

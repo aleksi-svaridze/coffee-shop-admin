@@ -4,15 +4,12 @@ import styles from "./CoffeeCard.module.css";
 function CoffeeCard({ coffee }) {
   return (
     <div className={styles.card}>
-      <img
-        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-        alt="coffee"
-      />
-      <h3>{coffee.name}</h3>
+      <img src={coffee.imageUrl} alt="coffee" />
+      <h3>{coffee.coffeeName}</h3>
       <p>{coffee.description}</p>
       <p>
         <strong>Origin:</strong>
-        {coffee.origin}
+        {coffee.countryOfOrigin}
       </p>
       <p>
         <strong>Caffeine:</strong>
