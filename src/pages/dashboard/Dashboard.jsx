@@ -25,6 +25,13 @@ function Dashboard() {
       caffeine: "125mg",
       price: "$5.99",
     },
+    {
+      id: "cof_sample4",
+      name: "Kenyan BB",
+      origin: "Kenya",
+      caffeine: "725mg",
+      price: "$9.99",
+    },
   ]);
 
   const deleteCoffee = (id) => {
