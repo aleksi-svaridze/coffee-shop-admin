@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header/Header";
 import Table from "../../components/table/Table";
+import AddNewIngredientForm from "../../components/forms/addNewIngredientForm/AddNewIngredientForm";
 
 function Ingredients() {
   const [ingredients] = useState([
@@ -55,6 +56,8 @@ function Ingredients() {
         deleteIngredient={deleteIngredient}
         editIngredient={editIngredient}
       />
+
+      <AddNewIngredientForm />
     </main>
   );
 }

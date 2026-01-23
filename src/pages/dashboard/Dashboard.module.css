@@ -28,7 +28,7 @@
 }
 
 .table th {
-    background-color: #7D5A50;
+  background-color: #7d5a50;
   font-weight: 600;
   color: #fff;
 }
@@ -37,8 +37,8 @@
   display: flex;
   gap: 8px;
 }
-.view{
-  background-color:#b4846c;
+.view {
+  background-color: #b4846c;
   color: white;
   font-weight: 500;
 
@@ -46,11 +46,11 @@
   padding: 8px 12px;
   font-size: 0.9rem;
   border-radius: 8px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .edit {
-  background:#7d5a50;
+  background: #7d5a50;
   color: white;
   font-weight: 500;
   border: none;
@@ -70,54 +70,15 @@
 }
 
 /* CARDS */
-h2{
-    font-size: 1.5em;
+h2 {
+  font-size: 1.5em;
+  margin-top: 32px;
+  color: #4a3b36;
 }
 .cards {
-  margin-top: 32px;
+  margin-top: 8px;
   margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.card h3 {
-  margin: 12px 0 4px;
-  font-size: 1.2rem;
-  color: #7D5A50;;
-}
-
-.card p {
-  font-size: 20x;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.card span {
-  display: block;
-  margin-top: 8px;
-  font-weight: 600;
-}
-.card_footer{
-    padding: 20px 0px;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
