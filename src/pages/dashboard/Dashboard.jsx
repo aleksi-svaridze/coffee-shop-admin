@@ -32,6 +32,13 @@ function Dashboard() {
       caffeine: "725mg",
       price: "$9.99",
     },
+    {
+      id: "cof_sample5",
+      name: "Africa BB",
+      origin: "Africa",
+      caffeine: "725mg",
+      price: "$9.99",
+    },
   ]);
 
   const deleteCoffee = (id) => {
