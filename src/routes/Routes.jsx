@@ -4,6 +4,7 @@ import AddNewCoffee from "../pages/addNewCoffee/AddNewCoffee";
 import Ingredients from "../pages/ingredients/Ingredients";
 import NotFound from "../pages/notFound/NotFound";
 import SingleItem from "../pages/singleItem/SingleItem";
+import UpdateCoffeeData from "../pages/updateCoffeeData/UpdateCoffeeData";
 
 export const Routes = [
   {
@@ -22,6 +23,10 @@ export const Routes = [
       {
         element: <AddNewCoffee />,
         path: "add-coffee",
+      },
+      {
+        element: <UpdateCoffeeData />,
+        path: "update-coffee/:id",
       },
       {
         element: <Ingredients />,

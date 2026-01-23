@@ -10,7 +10,6 @@ function Table({
   value_5,
   data,
   deleteCoffee,
-  editCoffee,
 }) {
   const location = useLocation();
 
@@ -49,9 +48,8 @@ function Table({
             <Btn
               bgColor={"#7d5a50"}
               label={"Edit"}
-              path={"#"}
-              id={item.id}
-              action={editCoffee}
+              path={`/update-coffee/${item._id}`}
+              id={item._id}
             />
             <Btn
               bgColor={"#e74c3c"}
