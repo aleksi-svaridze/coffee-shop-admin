@@ -1,9 +1,9 @@
-import Styles from "./AddNewCoffeeForm.module.css";
+import { useEffect, useState } from "react";
+import Styles from "./UpdateCoffeeDataForm.module.css";
 import Btn from "../../buttons/Btn";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddNewCoffeeForm() {
+function UpdateCoffeeDataForm() {
   const [coffeeName, setCoffeeName] = useState("");
   const [countryOfOrigin, setCountryOfOrigin] = useState("");
   const [description, setDescription] = useState("");
@@ -11,8 +11,24 @@ function AddNewCoffeeForm() {
   const [price, setPrice] = useState(0);
   const [caffeine, setCaffeine] = useState(0);
   const [ingredients, setIngredients] = useState([]);
-
+  const params = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(
+      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${params.id}`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        (setCaffeine(data.caffeine),
+          setImageUrl(data.imageUrl),
+          setIngredients(data.ingredients),
+          setPrice(data.price),
+          setDescription(data.description),
+          setCountryOfOrigin(data.countryOfOrigin),
+          setCoffeeName(data.coffeeName));
+      });
+  }, [params.id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +59,7 @@ function AddNewCoffeeForm() {
     }
   };
 
-  const handleAddNewCoffee = (e) => {
+  const handleUpdateCoffeeData = (e) => {
     e.preventDefault();
     // Logic to handle form submission goes here
     setCaffeine(caffeine);
@@ -54,25 +70,27 @@ function AddNewCoffeeForm() {
     setPrice(price);
     setIngredients(ingredients);
 
-    fetch("https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        coffeeName,
-        countryOfOrigin,
-        description,
-        imageUrl,
-        price,
-        caffeine,
-        ingredients,
-      }),
-    })
-      .then((response) => {
-        response.json();
-      })
-      .then((data) => {
-        console.log("Success:", data);
-      });
+    fetch(
+      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${params.id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          coffeeName,
+          countryOfOrigin,
+          description,
+          imageUrl,
+          price,
+          caffeine,
+          ingredients,
+        }),
+      },
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+      console.log("Data has been UPDATED");
+    });
 
     // Reset form fields
     navigate("/");
@@ -89,6 +107,7 @@ function AddNewCoffeeForm() {
             name="coffeeName"
             required
             className={Styles.input}
+            value={coffeeName}
             onChange={(e) => handleInputChange(e)}
           />
         </div>
@@ -101,6 +120,7 @@ function AddNewCoffeeForm() {
             name="countryOfOrigin"
             required
             className={Styles.input}
+            value={countryOfOrigin}
             onChange={(e) => handleInputChange(e)}
           />
         </div>
@@ -111,8 +131,9 @@ function AddNewCoffeeForm() {
         <textarea
           id="description"
           name="description"
-          onChange={(e) => handleInputChange(e)}
           className={Styles.textarea}
+          value={description}
+          onChange={(e) => handleInputChange(e)}
         ></textarea>
       </div>
 
@@ -125,6 +146,7 @@ function AddNewCoffeeForm() {
             name="imageUrl"
             required
             className={Styles.input}
+            value={imageUrl}
             onChange={(e) => handleInputChange(e)}
           />
         </div>
@@ -138,6 +160,7 @@ function AddNewCoffeeForm() {
             name="price"
             required
             className={Styles.input}
+            value={price}
             onChange={(e) => handleInputChange(e)}
           />
         </div>
@@ -151,6 +174,7 @@ function AddNewCoffeeForm() {
           id="caffeine"
           name="caffeine"
           className={Styles.input}
+          value={caffeine}
           onChange={(e) => handleInputChange(e)}
         />
       </div>
@@ -161,7 +185,7 @@ function AddNewCoffeeForm() {
           id="ingredients"
           name="ingredients"
           className={Styles.textarea}
-          value={"Ingredient"}
+          value={ingredients}
           onChange={(e) => handleInputChange(e)}
         ></textarea>
         <p className={Styles.input__description}>
@@ -171,12 +195,12 @@ function AddNewCoffeeForm() {
 
       <Btn
         bgColor={"#7D5A50"}
-        label={"Add Coffee"}
+        label={"Update Coffee"}
         path={"#"}
-        action={handleAddNewCoffee}
+        action={handleUpdateCoffeeData}
       />
     </form>
   );
 }
 
-export default AddNewCoffeeForm;
+export default UpdateCoffeeDataForm;

@@ -1,18 +1,15 @@
 import Btn from "../buttons/Btn";
 import styles from "./CoffeeCard.module.css";
 
-function CoffeeCard({ coffee }) {
+function CoffeeCard({ coffee, deleteCoffee }) {
   return (
     <div className={styles.card}>
-      <img
-        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-        alt="coffee"
-      />
-      <h3>{coffee.name}</h3>
+      <img src={coffee.imageUrl} alt="coffee" />
+      <h3>{coffee.coffeeName}</h3>
       <p>{coffee.description}</p>
       <p>
         <strong>Origin:</strong>
-        {coffee.origin}
+        {coffee.countryOfOrigin}
       </p>
       <p>
         <strong>Caffeine:</strong>
@@ -27,11 +24,21 @@ function CoffeeCard({ coffee }) {
         <Btn
           bgColor="#B4846C"
           label="View More"
-          path={`/coffee/${coffee.id}`}
+          path={`/coffee/${coffee._id}`}
         />
         <div>
-          <Btn bgColor="#7D5A50" label="Edit" />
-          <Btn bgColor="#e74c3c" label="Delete" />
+          <Btn
+            bgColor="#7D5A50"
+            label="Edit"
+            path={`/update-coffee/${coffee._id}`}
+            id={coffee._id}
+          />
+          <Btn
+            bgColor="#e74c3c"
+            label="Delete"
+            action={deleteCoffee}
+            id={coffee._id}
+          />
         </div>
       </footer>
     </div>

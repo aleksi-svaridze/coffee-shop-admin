@@ -44,7 +44,7 @@ function AddNewIngredientForm() {
           <label htmlFor="strength">Strength</label>
 
           <select id="strength" name="strength" className={Styles.select}>
-            <option value="mild">Mild</option>
+            <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="strong">Strong</option>
           </select>

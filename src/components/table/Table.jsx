@@ -10,10 +10,9 @@ function Table({
   value_5,
   data,
   deleteCoffee,
-  editCoffee,
 }) {
   const location = useLocation();
-  console.log(location);
+
   return (
     <div className={Styles.table}>
       <div className={Styles.table__header}>
@@ -25,11 +24,11 @@ function Table({
         <div className={Styles.cell}>Actions</div>
       </div>
       {data.map((item) => (
-        <div key={item.id} className={Styles.table__body}>
-          <div className={Styles.cell}>{item.id}</div>
-          <div className={Styles.cell}>{item.name}</div>
+        <div key={item._id} className={Styles.table__body}>
+          <div className={Styles.cell}>{item.coffeeName}</div>
+          <div className={Styles.cell}>{item.coffeeName}</div>
           <div className={Styles.cell}>
-            {location.pathname !== "/" ? item.price : item.origin}
+            {location.pathname !== "/" ? item.price : item.countryOfOrigin}
           </div>
           <div className={Styles.cell}>
             {location.pathname !== "/" ? item.strength : item.caffeine}
@@ -42,22 +41,21 @@ function Table({
               <Btn
                 bgColor={"#B4846C"}
                 label={"View"}
-                path={`/coffee/${item.id}`}
+                path={`/coffee/${item._id}`}
               />
             )}
 
             <Btn
               bgColor={"#7d5a50"}
               label={"Edit"}
-              path={"#"}
-              id={item.id}
-              action={editCoffee}
+              path={`/update-coffee/${item._id}`}
+              id={item._id}
             />
             <Btn
               bgColor={"#e74c3c"}
               label={"Delete"}
               path={"#"}
-              id={item.id}
+              id={item._id}
               action={deleteCoffee}
             />
           </div>

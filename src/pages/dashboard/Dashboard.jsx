@@ -1,46 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import styles from "./Dashboard.module.css";
 import Table from "../../components/table/Table";
 import CoffeeCard from "../../components/coffeeCard/CoffeeCard";
 
 function Dashboard() {
-  const [data] = useState([
-    {
-      id: "cof_sample1",
-      name: "Ethiopian Yirgacheffe",
-      origin: "Ethiopia",
-      caffeine: "120mg",
-      price: "$4.99",
-      description:
-        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
-    },
-    {
-      id: "cof_sample2",
-      name: "Colombian Supremo",
-      origin: "Colombia",
-      caffeine: "130mg",
-      price: "$5.49",
-      description:
-        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
-    },
-    {
-      id: "cof_sample3",
-      name: "Kenyan AA",
-      origin: "Kenya",
-      caffeine: "125mg",
-      price: "$5.99",
-      description:
-        "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
-    },
-  ]);
+  const [coffeesData, setCoffeesData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees")
+      .then((response) => response.json())
+      .then((data) => {
+        setCoffeesData(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   const deleteCoffee = (id) => {
-    console.log("Delete coffee with ID:", id);
-  };
-
-  const editCoffee = (id) => {
-    console.log("Edit coffee with ID:", id);
+    fetch(
+      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${id}`,
+      {
+        method: "DELETE",
+      },
+    ).then((response) => {
+      if (response.ok) {
+        setCoffeesData(coffeesData.filter((coffee) => coffee._id !== id));
+        console.log("Coffee deleted successfully");
+      } else {
+        console.error("Failed to delete coffee");
+      }
+    });
   };
 
   return (
@@ -59,16 +48,19 @@ function Dashboard() {
         value_3={"Origin"}
         value_4={"Caffeine"}
         value_5={"Price"}
-        data={data}
+        data={coffeesData}
         deleteCoffee={deleteCoffee}
-        editCoffee={editCoffee}
       />
 
       {/* Coffee Cards */}
       <h2>Coffee-Cards</h2>
       <section className={styles.cards}>
-        {data.map((coffee) => (
-          <CoffeeCard key={coffee.id} coffee={coffee} />
+        {coffeesData.map((coffee) => (
+          <CoffeeCard
+            key={coffee._id}
+            coffee={coffee}
+            deleteCoffee={deleteCoffee}
+          />
         ))}
       </section>
     </main>

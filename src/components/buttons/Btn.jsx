@@ -5,7 +5,7 @@ function Btn({ bgColor, label, path, action, id }) {
   return (
     <Link
       to={path}
-      onClick={() => action(id)}
+      onClick={id ? () => action(id) : (e) => action(e)}
       className={Styles.btn}
       style={{ backgroundColor: bgColor }}
     >
