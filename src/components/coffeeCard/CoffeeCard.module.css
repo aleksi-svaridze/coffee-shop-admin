@@ -32,9 +32,13 @@
   font-weight: 600;
 }
 .card_footer {
-  padding: 20px 0px;
+  padding: 15px 20px;
   background-color: #f9f9f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.btn_primary {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  }

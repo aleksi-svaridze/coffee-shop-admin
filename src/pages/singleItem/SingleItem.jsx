@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header/Header";
 import styles from "./SingleItem.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Btn from "../../components/buttons/Btn";
 
 export default function SingleItem() {
@@ -20,6 +20,7 @@ export default function SingleItem() {
       { id: 2, name: "Robusta Beans", strength: "Medium", flavor: " Earthy" },
     ],
   });
+  const navigate = useNavigate();
   const { id } = useParams();
   console.log(id);
   // const navigate = useNavigate();
@@ -80,7 +81,10 @@ export default function SingleItem() {
             <ul>
               {coffeeDetail.ingredients.map((ing, i) => (
                 <li key={i}>
-                  {ing.name} — Strength: {ing.strength}, Flavor: {ing.flavor}
+                  {ing.name}
+                  <span>
+                    Strength: {ing.strength}, Flavor: {ing.flavor}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -88,13 +92,13 @@ export default function SingleItem() {
             <div className={styles.buttons}>
               <Btn
                 bgColor={"#7d5a50"}
-                label={"Edit"}
+                label={"Edit coffee"}
                 path={`/update-coffee/${coffeeDetail._id}`}
                 id={coffeeDetail._id}
               />
               <Btn
                 bgColor={"#e74c3c"}
-                label={"Delete"}
+                label={"Delete cofee"}
                 path={"#"}
                 id={coffeeDetail._id}
                 // action={deleteCoffee}

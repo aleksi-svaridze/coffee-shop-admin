@@ -26,7 +26,7 @@ function CoffeeCard({ coffee, deleteCoffee }) {
           label="View More"
           path={`/coffee/${coffee._id}`}
         />
-        <div>
+        <div className={styles.btn_primary}>
           <Btn
             bgColor="#7D5A50"
             label="Edit"
