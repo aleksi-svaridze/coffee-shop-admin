@@ -24,20 +24,20 @@ function CoffeeCard({ coffee, deleteCoffee }) {
         <Btn
           bgColor="#B4846C"
           label="View More"
-          path={`/coffee/${coffee._id}`}
+          path={`/coffee/${coffee.id}`}
         />
-        <div>
+        <div className={styles.btn_primary}>
           <Btn
             bgColor="#7D5A50"
             label="Edit"
-            path={`/update-coffee/${coffee._id}`}
-            id={coffee._id}
+            path={`/update-coffee/${coffee.id}`}
+            id={coffee.id}
           />
           <Btn
             bgColor="#e74c3c"
             label="Delete"
             action={deleteCoffee}
-            id={coffee._id}
+            id={coffee.id}
           />
         </div>
       </footer>

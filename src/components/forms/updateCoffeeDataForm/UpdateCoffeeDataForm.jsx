@@ -15,9 +15,7 @@ function UpdateCoffeeDataForm() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(
-      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${params.id}`,
-    )
+    fetch(`http://localhost:3000/coffeeData/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         (setCaffeine(data.caffeine),
@@ -70,22 +68,19 @@ function UpdateCoffeeDataForm() {
     setPrice(price);
     setIngredients(ingredients);
 
-    fetch(
-      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${params.id}`,
-      {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          coffeeName,
-          countryOfOrigin,
-          description,
-          imageUrl,
-          price,
-          caffeine,
-          ingredients,
-        }),
-      },
-    ).then((response) => {
+    fetch(`http://localhost:3000/coffeeData/${params.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        coffeeName,
+        countryOfOrigin,
+        description,
+        imageUrl,
+        price,
+        caffeine,
+        ingredients,
+      }),
+    }).then((response) => {
       if (!response.ok) {
         throw new Error("Something went wrong");
       }

@@ -24,8 +24,8 @@ function Table({
         <div className={Styles.cell}>Actions</div>
       </div>
       {data.map((item) => (
-        <div key={item._id} className={Styles.table__body}>
-          <div className={Styles.cell}>{item.coffeeName}</div>
+        <div key={item.id} className={Styles.table__body}>
+          <div className={Styles.cell}>{item.id}</div>
           <div className={Styles.cell}>{item.coffeeName}</div>
           <div className={Styles.cell}>
             {location.pathname !== "/" ? item.price : item.countryOfOrigin}
@@ -41,21 +41,21 @@ function Table({
               <Btn
                 bgColor={"#B4846C"}
                 label={"View"}
-                path={`/coffee/${item._id}`}
+                path={`/coffee/${item.id}`}
               />
             )}
 
             <Btn
               bgColor={"#7d5a50"}
               label={"Edit"}
-              path={`/update-coffee/${item._id}`}
-              id={item._id}
+              path={`/update-coffee/${item.id}`}
+              id={item.id}
             />
             <Btn
               bgColor={"#e74c3c"}
               label={"Delete"}
               path={"#"}
-              id={item._id}
+              id={item.id}
               action={deleteCoffee}
             />
           </div>

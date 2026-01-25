@@ -8,7 +8,7 @@ function Dashboard() {
   const [coffeesData, setCoffeesData] = useState([]);
 
   useEffect(() => {
-    fetch("https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees")
+    fetch("http://localhost:3000/coffeeData")
       .then((response) => response.json())
       .then((data) => {
         setCoffeesData(data);
@@ -17,14 +17,11 @@ function Dashboard() {
   }, []);
 
   const deleteCoffee = (id) => {
-    fetch(
-      `https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees/${id}`,
-      {
-        method: "DELETE",
-      },
-    ).then((response) => {
+    fetch(`http://localhost:3000/coffeeData/${id}`, {
+      method: "DELETE",
+    }).then((response) => {
       if (response.ok) {
-        setCoffeesData(coffeesData.filter((coffee) => coffee._id !== id));
+        setCoffeesData(coffeesData.filter((coffee) => coffee.id !== id));
         console.log("Coffee deleted successfully");
       } else {
         console.error("Failed to delete coffee");
@@ -57,7 +54,7 @@ function Dashboard() {
       <section className={styles.cards}>
         {coffeesData.map((coffee) => (
           <CoffeeCard
-            key={coffee._id}
+            key={coffee.id}
             coffee={coffee}
             deleteCoffee={deleteCoffee}
           />

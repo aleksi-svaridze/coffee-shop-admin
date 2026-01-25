@@ -54,7 +54,7 @@ function AddNewCoffeeForm() {
     setPrice(price);
     setIngredients(ingredients);
 
-    fetch("https://crudcrud.com/api/c7d37118a89a4bcdb7ddbcc79fa65b9e/coffees", {
+    fetch("http://localhost:3000/coffeeData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
