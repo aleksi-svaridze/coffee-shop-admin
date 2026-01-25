@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmVlfGVufDB8fDB8fHwy",
+      "coffeeName": "Yirgacheffe",
+      "countryOfOrigin": "Ethiopia",
+      "caffeine": 230,
+      "price": 12,
+      "description": "A light roasted coffee with bright acidity, and complex fruit and floral notes.",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "Arabica Beans",
+          "strength": "Low",
+          "flavor": "Fruity"
+        },
+        {
+          "id": 2,
+          "name": "Robusta Beans",
+          "strength": "Medium",
+          "flavor": " Earthy"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D",
+      "coffeeName": "Brazilian",
+      "countryOfOrigin": "Brazil",
+      "caffeine": 330,
+      "price": 22,
+      "description": "A light roasted coffee from Brazil, and there are not complex fruit and floral notes.",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "Bean Beans",
+          "strength": "Medium",
+          "flavor": "Fruity"
+        },
+        {
+          "id": 2,
+          "name": "Soio Beans",
+          "strength": "Low",
+          "flavor": " Earthy"
+        }
+      ]
+    }
+  ]
+}

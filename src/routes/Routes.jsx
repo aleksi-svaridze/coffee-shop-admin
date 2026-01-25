@@ -26,7 +26,7 @@ export const Routes = [
       },
       {
         element: <UpdateCoffeeData />,
-        path: "update-coffee",
+        path: "update-coffee/:id",
       },
       {
         element: <Ingredients />,
