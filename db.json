@@ -9,6 +9,16 @@
       "caffeine": 12345,
       "ingredients": [],
       "id": "a07b"
+    },
+    {
+      "id": "2a69",
+      "coffeeName": "new coffee3",
+      "countryOfOrigin": "Georgia",
+      "description": "sg sg",
+      "imageUrl": "https://media.istockphoto.com/id/505248867/photo/3d-acedemic-penguin-drinks-a-nice-cup-of-coffee.webp?a=1&b=1&s=612x612&w=0&k=20&c=MZWA5NxJlcTtsDLxExiUbrXQGhKj9FtvYiIn_JTKdh8=",
+      "price": 23,
+      "caffeine": 23,
+      "ingredients": []
     }
   ]
 }
