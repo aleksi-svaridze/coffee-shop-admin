@@ -157,13 +157,19 @@ function AddNewCoffeeForm() {
 
       <div className={Styles.input__group}>
         <label htmlFor="ingredients">Ingredients</label>
-        <textarea
+        <select
           id="ingredients"
           name="ingredients"
-          className={Styles.textarea}
-          value={"Ingredient"}
+          multiple
           onChange={(e) => handleInputChange(e)}
-        ></textarea>
+          className={Styles.textarea}
+        >
+          <option value="">Select an ingredient</option>
+          <option value="Arabica Beans">Arabica Beans</option>
+          <option value="Vanilla Syrup">Vanilla Syrup</option>
+          <option value="Milk">Milk</option>
+          <option value="Sugar">Sugar</option>
+        </select>
         <p className={Styles.input__description}>
           Hold Ctrl (or Cmd) to select multiple ingredients
         </p>
