@@ -33,6 +33,10 @@ export const Routes = [
         path: "add-ingredients",
       },
       {
+        element: <Ingredients />,
+        path: "update-ingredients/:id",
+      },
+      {
         element: <NotFound />,
         path: "*",
       },

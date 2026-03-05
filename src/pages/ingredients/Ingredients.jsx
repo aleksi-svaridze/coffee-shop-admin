@@ -1,42 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
-import Table from "../../components/table/Table";
 import AddNewIngredientForm from "../../components/forms/addNewIngredientForm/AddNewIngredientForm";
+import IngredientsTable from "../../components/table/IngredientsTable";
+import { useLocation, useParams } from "react-router-dom";
+import UpdateIngredientsForm from "../../components/forms/updateCoffeeDataForm/UpdateIngredientsForm";
 
 function Ingredients() {
-  const [ingredients] = useState([
-    {
-      id: "ing_sample1",
-      name: "Arabica Beans",
-      price: 4.0,
-      strength: "Medium",
-      flavor: "Sweet",
-    },
-    {
-      id: "ing_sample2",
-      name: "Robusta Beans",
-      price: 3.5,
-      strength: "High",
-      flavor: "Earthy",
-    },
-    {
-      id: "ing_sample3",
-      name: "Vanilla Syrup",
-      price: 6.0,
-      strength: "Low",
-      flavor: "Fruity",
-    },
-  ]);
+  const [ingredientsData, setIngredientsData] = useState([]);
+  const location = useLocation();
+  const params = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/ingredientData`)
+      .then((res) => res.json())
+      .then((data) => setIngredientsData(data));
+  }, []);
 
   const deleteIngredient = (id) => {
-    console.log("Delete ingredient with ID:", id);
-    // Implement deletion logic here
+    fetch(`http://localhost:3000/ingredientData/${id}`, {
+      method: "DELETE",
+    }).then((response) => {
+      if (response.ok) {
+        setIngredientsData(
+          ingredientsData.filter((ingredient) => ingredient.id !== id),
+        );
+        console.log("Ingredient deleted successfully");
+      } else {
+        console.error("Failed to delete ingredient");
+      }
+    });
   };
 
   const editIngredient = (id) => {
     console.log("Edit ingredient with ID:", id);
     // Implement edit logic here
   };
+
   return (
     <main className="main ">
       <Header
@@ -46,18 +45,22 @@ function Ingredients() {
         path={"/"}
       />
 
-      <Table
+      <IngredientsTable
         value_1={"ID"}
         value_2={"Name"}
         value_3={"Price"}
         value_4={"Strength"}
         value_5={"Flavor"}
-        data={ingredients}
+        data={ingredientsData}
         deleteIngredient={deleteIngredient}
         editIngredient={editIngredient}
       />
 
-      <AddNewIngredientForm />
+      {location.pathname === `/update-ingredients/${params.id}` ? (
+        <UpdateIngredientsForm />
+      ) : (
+        <AddNewIngredientForm />
+      )}
     </main>
   );
 }
