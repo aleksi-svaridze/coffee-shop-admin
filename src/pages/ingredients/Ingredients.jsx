@@ -6,14 +6,16 @@ import { useLocation, useParams } from "react-router-dom";
 import UpdateIngredientsForm from "../../components/forms/updateCoffeeDataForm/UpdateIngredientsForm";
 
 function Ingredients() {
-  const [ingredientsData, setIngredientsData] = useState([]);
+  const [ingredientData, setIngredientData] = useState([]);
   const location = useLocation();
   const params = useParams();
 
   useEffect(() => {
     fetch(`http://localhost:3000/ingredientData`)
       .then((res) => res.json())
-      .then((data) => setIngredientsData(data));
+      .then((data) => {
+        setIngredientData(data);
+      });
   }, []);
 
   const deleteIngredient = (id) => {
@@ -21,8 +23,8 @@ function Ingredients() {
       method: "DELETE",
     }).then((response) => {
       if (response.ok) {
-        setIngredientsData(
-          ingredientsData.filter((ingredient) => ingredient.id !== id),
+        setIngredientData(
+          ingredientData.filter((ingredient) => ingredient.id !== id),
         );
         console.log("Ingredient deleted successfully");
       } else {
@@ -51,7 +53,7 @@ function Ingredients() {
         value_3={"Price"}
         value_4={"Strength"}
         value_5={"Flavor"}
-        data={ingredientsData}
+        data={ingredientData}
         deleteIngredient={deleteIngredient}
         editIngredient={editIngredient}
       />

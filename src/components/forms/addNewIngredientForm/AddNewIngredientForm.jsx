@@ -1,6 +1,6 @@
 import Styles from "./AddNewIngredientForm.module.css";
 import Btn from "../../buttons/Btn";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function AddNewIngredientForm() {
@@ -10,7 +10,7 @@ function AddNewIngredientForm() {
   const [flavor, setFlavor] = useState("");
   const [price, setPrice] = useState(0);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,14 +42,14 @@ function AddNewIngredientForm() {
     setPrice(price);
     setIngredientName(ingredientName);
 
-    fetch("http://localhost:3000/ingredientData", {
+    fetch(`http://localhost:3000/ingredientData`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        flavor,
-        strength,
-        description,
         ingredientName,
+        description,
+        strength,
+        flavor,
         price,
       }),
     })
@@ -60,7 +60,7 @@ function AddNewIngredientForm() {
         console.log("Success:", data);
       });
 
-    navigate("/");
+    // navigate("/");
   };
 
   return (

@@ -1,6 +1,6 @@
 import Styles from "./AddNewCoffeeForm.module.css";
 import Btn from "../../buttons/Btn";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddNewCoffeeForm() {
@@ -11,8 +11,15 @@ function AddNewCoffeeForm() {
   const [price, setPrice] = useState(0);
   const [caffeine, setCaffeine] = useState(0);
   const [ingredients, setIngredients] = useState([]);
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/ingredientData`)
+      .then((response) => response.json())
+      .then((data) => setIngredients(data));
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,24 +42,20 @@ function AddNewCoffeeForm() {
       case "caffeine":
         setCaffeine(Number(value));
         break;
-      case "ingredients":
-        setIngredients(
-          Array.from(e.target.selectedOptions, (option) => option.value),
+      case "ingredients": {
+        const selected = Array.from(e.target.selectedOptions, (option) =>
+          ingredients.find(
+            (ingredient) => ingredient.ingredientName === option.value,
+          ),
         );
+        setSelectedIngredients(selected);
         break;
+      }
     }
   };
 
   const handleAddNewCoffee = (e) => {
     e.preventDefault();
-    // Logic to handle form submission goes here
-    setCaffeine(caffeine);
-    setCoffeeName(coffeeName);
-    setCountryOfOrigin(countryOfOrigin);
-    setDescription(description);
-    setImageUrl(imageUrl);
-    setPrice(price);
-    setIngredients(ingredients);
 
     fetch("http://localhost:3000/coffeeData", {
       method: "POST",
@@ -64,7 +67,7 @@ function AddNewCoffeeForm() {
         imageUrl,
         price,
         caffeine,
-        ingredients,
+        ingredients: selectedIngredients,
       }),
     })
       .then((response) => {
@@ -164,11 +167,12 @@ function AddNewCoffeeForm() {
           onChange={(e) => handleInputChange(e)}
           className={Styles.textarea}
         >
-          <option value="">Select an ingredient</option>
-          <option value="Arabica Beans">Arabica Beans</option>
-          <option value="Vanilla Syrup">Vanilla Syrup</option>
-          <option value="Milk">Milk</option>
-          <option value="Sugar">Sugar</option>
+          {/* How to pass just selected ingredients not all of them */}
+          {ingredients.map((ingredient) => (
+            <option key={ingredient.id} value={ingredient.ingredientName}>
+              {ingredient.ingredientName} - {ingredient.price}
+            </option>
+          ))}
         </select>
         <p className={Styles.input__description}>
           Hold Ctrl (or Cmd) to select multiple ingredients

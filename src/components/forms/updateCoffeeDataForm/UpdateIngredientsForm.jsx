@@ -78,7 +78,6 @@ function UpdateIngredientsForm() {
         console.log("Data has been UPDATED");
       });
 
-    // Reset form fields
     navigate("/");
   };
 
@@ -130,9 +129,10 @@ function UpdateIngredientsForm() {
           <select
             id="strength"
             name="strength"
-            className={Styles.select}
+            className={Styles.input}
             onChange={(e) => handleInputChange(e)}
           >
+            <option value={strength}>{strength}</option>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="strong">Strong</option>
@@ -147,6 +147,7 @@ function UpdateIngredientsForm() {
             id="flavor"
             name="flavor"
             required
+            value={flavor}
             className={Styles.input}
           />
         </div>

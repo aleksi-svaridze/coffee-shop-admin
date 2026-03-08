@@ -8,7 +8,6 @@ export default function SingleItem() {
   const [coffeeDetail, setCoffeeDetail] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:3000/coffeeData/${id}`)
@@ -59,11 +58,11 @@ export default function SingleItem() {
             <p>{coffeeDetail.description}</p>
             <h3>Ingredients</h3>
             <ul>
-              {coffeeDetail.ingredients?.map((ing) => (
-                <li key={ing.id}>
-                  {ing.name}
+              {coffeeDetail.ingredients?.map((ingredient) => (
+                <li key={ingredient.id}>
+                  {ingredient.ingredientName}
                   <span>
-                    Strength: {ing.strength}, Flavor: {ing.flavor}
+                    Strength: {ingredient.strength}, Flavor: {ingredient.flavor}
                   </span>
                 </li>
               ))}
