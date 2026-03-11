@@ -1,37 +1,13 @@
 {
   "coffeeData": [
     {
-      "coffeeName": "Americanoo",
-      "countryOfOrigin": "Georgiaa",
-      "description": "descc",
+      "coffeeName": "Americanoooorr",
+      "countryOfOrigin": "Georgiaarr",
+      "description": "desccrr",
       "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 222,
-      "caffeine": 222,
+      "price": 222444,
+      "caffeine": 222444,
       "ingredients": [
-        {
-          "id": "3159",
-          "ingredientName": "Test ing",
-          "description": "Test Ing Desc",
-          "strength": "strong",
-          "flavor": "Testy",
-          "price": 23
-        },
-        {
-          "id": "707d",
-          "ingredientName": "Arabica Beans",
-          "description": "Arabica Beans Description..",
-          "strength": "medium",
-          "flavor": "Sweet",
-          "price": 44
-        },
-        {
-          "id": "0b34",
-          "ingredientName": "Milko",
-          "description": "Milko description",
-          "strength": "medium",
-          "flavor": "Milky",
-          "price": 23
-        },
         {
           "flavor": "Earthy",
           "strength": "low",
@@ -41,12 +17,12 @@
           "id": "4829"
         },
         {
-          "id": "cb27",
-          "ingredientName": "s",
-          "description": "s",
+          "id": "e10c",
+          "ingredientName": "Vanilla Syrup old",
+          "description": "23",
           "strength": "medium",
-          "flavor": "s",
-          "price": 2
+          "flavor": "yyyy",
+          "price": 23
         }
       ],
       "id": "562f"
@@ -54,11 +30,11 @@
   ],
   "ingredientData": [
     {
-      "flavor": "Fruity",
+      "flavor": "Earthy",
       "strength": "strong",
-      "description": "Description here..",
-      "ingredientName": "Vanilla Syrup",
-      "price": 23,
+      "description": "Description here..d",
+      "ingredientName": "Vanilla Syrupp",
+      "price": 233,
       "id": "8698"
     },
     {
@@ -70,36 +46,12 @@
       "id": "4829"
     },
     {
-      "id": "707d",
-      "ingredientName": "Arabica Beans",
-      "description": "Arabica Beans Description..",
+      "id": "e10c",
+      "ingredientName": "Vanilla Syrup old",
+      "description": "23",
       "strength": "medium",
-      "flavor": "Sweet",
-      "price": 44
-    },
-    {
-      "id": "0b34",
-      "ingredientName": "Milko",
-      "description": "Milko description",
-      "strength": "medium",
-      "flavor": "Milky",
+      "flavor": "yyyy",
       "price": 23
-    },
-    {
-      "id": "3159",
-      "ingredientName": "Test ing",
-      "description": "Test Ing Desc",
-      "strength": "strong",
-      "flavor": "Testy",
-      "price": 23
-    },
-    {
-      "id": "cb27",
-      "ingredientName": "s",
-      "description": "s",
-      "strength": "medium",
-      "flavor": "s",
-      "price": 2
     }
   ]
 }
