@@ -1,4 +1,4 @@
-# Coffee shop admin
+# Coffee shop admin example
 
 - [Live Template - MAIN - Branch](https://craft-coffee-shop-admin.netlify.app/)
 
