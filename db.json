@@ -1,13 +1,12 @@
 {
   "coffeeData": [
     {
-      "id": "3045",
-      "coffeeName": "Americano",
-      "countryOfOrigin": "Georgia",
-      "description": "Americano description",
+      "coffeeName": "Americanos",
+      "countryOfOrigin": "Georgiaaa",
+      "description": "Americanos descriptionos",
       "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 45,
-      "caffeine": 45,
+      "price": 45555,
+      "caffeine": 45555,
       "ingredients": [
         {
           "flavor": "Fruity",
@@ -16,16 +15,9 @@
           "ingredientName": "Vanilla Syrup",
           "price": 23,
           "id": "8698"
-        },
-        {
-          "flavor": "Earthy",
-          "strength": "low",
-          "description": "Robusta Beans Description here..",
-          "ingredientName": "Robusta Beans",
-          "price": 5,
-          "id": "4829"
         }
-      ]
+      ],
+      "id": "3045"
     },
     {
       "id": "6fb6",
@@ -43,6 +35,76 @@
           "strength": "medium",
           "flavor": "Sweet",
           "price": 44
+        }
+      ]
+    },
+    {
+      "coffeeName": "coffee 1",
+      "countryOfOrigin": "11",
+      "description": "coffee description 1",
+      "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 11,
+      "caffeine": 11,
+      "ingredients": [
+        {
+          "flavor": "Fruity",
+          "strength": "strong",
+          "description": "Description here..",
+          "ingredientName": "Vanilla Syrup",
+          "price": 23,
+          "id": "8698"
+        },
+        {
+          "flavor": "Earthy",
+          "strength": "low",
+          "description": "Robusta Beans Description here..",
+          "ingredientName": "Robusta Beans",
+          "price": 5,
+          "id": "4829"
+        }
+      ],
+      "id": "4d5b"
+    },
+    {
+      "id": "40c3",
+      "coffeeName": "Americanosss",
+      "countryOfOrigin": "Georgiasss",
+      "description": "Descriptionosss",
+      "imageUrl": "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 333,
+      "caffeine": 333,
+      "ingredients": [
+        {
+          "flavor": "Fruity",
+          "strength": "strong",
+          "description": "Description here..",
+          "ingredientName": "Vanilla Syrup",
+          "price": 23,
+          "id": "8698"
+        },
+        {
+          "flavor": "Earthy",
+          "strength": "low",
+          "description": "Robusta Beans Description here..",
+          "ingredientName": "Robusta Beans",
+          "price": 5,
+          "id": "4829"
+        },
+        {
+          "id": "707d",
+          "ingredientName": "Arabica Beans",
+          "description": "Arabica Beans Description..",
+          "strength": "medium",
+          "flavor": "Sweet",
+          "price": 44
+        },
+        {
+          "id": "0b34",
+          "ingredientName": "Milko",
+          "description": "Milko description",
+          "strength": "medium",
+          "flavor": "Milky",
+          "price": 23
         }
       ]
     }
@@ -71,6 +133,14 @@
       "strength": "medium",
       "flavor": "Sweet",
       "price": 44
+    },
+    {
+      "id": "0b34",
+      "ingredientName": "Milko",
+      "description": "Milko description",
+      "strength": "medium",
+      "flavor": "Milky",
+      "price": 23
     }
   ]
 }

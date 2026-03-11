@@ -11,6 +11,7 @@ function UpdateCoffeeDataForm() {
   const [price, setPrice] = useState(0);
   const [caffeine, setCaffeine] = useState(0);
   const [ingredients, setIngredients] = useState([]);
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
   const params = useParams();
   const navigate = useNavigate();
 
@@ -49,24 +50,20 @@ function UpdateCoffeeDataForm() {
       case "caffeine":
         setCaffeine(Number(value));
         break;
-      case "ingredients":
-        setIngredients(
-          Array.from(e.target.selectedOptions, (option) => option.value),
+      case "ingredients": {
+        const selected = Array.from(e.target.selectedOptions, (option) =>
+          ingredients.find(
+            (ingredient) => ingredient.ingredientName === option.value,
+          ),
         );
+        setSelectedIngredients(selected);
         break;
+      }
     }
   };
 
   const handleUpdateCoffeeData = (e) => {
     e.preventDefault();
-    // Logic to handle form submission goes here
-    setCaffeine(caffeine);
-    setCoffeeName(coffeeName);
-    setCountryOfOrigin(countryOfOrigin);
-    setDescription(description);
-    setImageUrl(imageUrl);
-    setPrice(price);
-    setIngredients(ingredients);
 
     fetch(`http://localhost:3000/coffeeData/${params.id}`, {
       method: "PUT",
@@ -78,7 +75,7 @@ function UpdateCoffeeDataForm() {
         imageUrl,
         price,
         caffeine,
-        ingredients,
+        ingredients: selectedIngredients,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -174,7 +171,7 @@ function UpdateCoffeeDataForm() {
         />
       </div>
 
-      <div className={Styles.input__group}>
+      {/* <div className={Styles.input__group}>
         <label htmlFor="ingredients">Ingredients</label>
         <textarea
           id="ingredients"
@@ -183,6 +180,38 @@ function UpdateCoffeeDataForm() {
           value={ingredients}
           onChange={(e) => handleInputChange(e)}
         ></textarea>
+        <p className={Styles.input__description}>
+          Hold Ctrl (or Cmd) to select multiple ingredients
+        </p>
+      </div> */}
+
+      <div className={Styles.input__group}>
+        <label htmlFor="ingredients">Ingredients</label>
+        <select
+          id="ingredients"
+          name="ingredients"
+          multiple
+          onChange={(e) => handleInputChange(e)}
+          className={Styles.textarea}
+        >
+          {/* How to pass just selected ingredients not all of them */}
+          {ingredients.map((ingredient) => (
+            <option
+              key={ingredient.id}
+              value={ingredient.ingredientName}
+              style={{
+                backgroundColor: "gray",
+                color: "white",
+                padding: "4px 6px",
+                borderRadius: "3px",
+                marginBottom: "4px",
+                fontSize: "10px",
+              }}
+            >
+              {ingredient.ingredientName} - {ingredient.price}
+            </option>
+          ))}
+        </select>
         <p className={Styles.input__description}>
           Hold Ctrl (or Cmd) to select multiple ingredients
         </p>

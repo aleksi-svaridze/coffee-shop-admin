@@ -34,7 +34,7 @@ function Table({
             {location.pathname !== "/" ? item.strength : item.caffeine}
           </div>
           <div className={Styles.cell}>
-            {location.pathname !== "/" ? item.flavor : item.price}
+            ${location.pathname !== "/" ? item.flavor : item.price}
           </div>
           <div className={Styles.table__flex_cell}>
             {location.pathname === "/" && (
