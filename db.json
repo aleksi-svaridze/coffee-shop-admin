@@ -1,94 +1,20 @@
 {
   "coffeeData": [
     {
-      "coffeeName": "Americanos",
-      "countryOfOrigin": "Georgiaaa",
-      "description": "Americanos descriptionos",
+      "coffeeName": "Americanoo",
+      "countryOfOrigin": "Georgiaa",
+      "description": "descc",
       "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 45555,
-      "caffeine": 45555,
+      "price": 222,
+      "caffeine": 222,
       "ingredients": [
         {
-          "flavor": "Fruity",
+          "id": "3159",
+          "ingredientName": "Test ing",
+          "description": "Test Ing Desc",
           "strength": "strong",
-          "description": "Description here..",
-          "ingredientName": "Vanilla Syrup",
-          "price": 23,
-          "id": "8698"
-        }
-      ],
-      "id": "3045"
-    },
-    {
-      "id": "6fb6",
-      "coffeeName": "coffee",
-      "countryOfOrigin": "Arctica",
-      "description": "arctica",
-      "imageUrl": "https://media.istockphoto.com/id/505248867/photo/3d-acedemic-penguin-drinks-a-nice-cup-of-coffee.webp?a=1&b=1&s=612x612&w=0&k=20&c=MZWA5NxJlcTtsDLxExiUbrXQGhKj9FtvYiIn_JTKdh8=",
-      "price": 333,
-      "caffeine": 333,
-      "ingredients": [
-        {
-          "id": "707d",
-          "ingredientName": "Arabica Beans",
-          "description": "Arabica Beans Description..",
-          "strength": "medium",
-          "flavor": "Sweet",
-          "price": 44
-        }
-      ]
-    },
-    {
-      "coffeeName": "coffee 1",
-      "countryOfOrigin": "11",
-      "description": "coffee description 1",
-      "imageUrl": "https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 11,
-      "caffeine": 11,
-      "ingredients": [
-        {
-          "flavor": "Fruity",
-          "strength": "strong",
-          "description": "Description here..",
-          "ingredientName": "Vanilla Syrup",
-          "price": 23,
-          "id": "8698"
-        },
-        {
-          "flavor": "Earthy",
-          "strength": "low",
-          "description": "Robusta Beans Description here..",
-          "ingredientName": "Robusta Beans",
-          "price": 5,
-          "id": "4829"
-        }
-      ],
-      "id": "4d5b"
-    },
-    {
-      "id": "40c3",
-      "coffeeName": "Americanosss",
-      "countryOfOrigin": "Georgiasss",
-      "description": "Descriptionosss",
-      "imageUrl": "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 333,
-      "caffeine": 333,
-      "ingredients": [
-        {
-          "flavor": "Fruity",
-          "strength": "strong",
-          "description": "Description here..",
-          "ingredientName": "Vanilla Syrup",
-          "price": 23,
-          "id": "8698"
-        },
-        {
-          "flavor": "Earthy",
-          "strength": "low",
-          "description": "Robusta Beans Description here..",
-          "ingredientName": "Robusta Beans",
-          "price": 5,
-          "id": "4829"
+          "flavor": "Testy",
+          "price": 23
         },
         {
           "id": "707d",
@@ -105,8 +31,25 @@
           "strength": "medium",
           "flavor": "Milky",
           "price": 23
+        },
+        {
+          "flavor": "Earthy",
+          "strength": "low",
+          "description": "Robusta Beans Description here..",
+          "ingredientName": "Robusta Beans",
+          "price": 5,
+          "id": "4829"
+        },
+        {
+          "id": "cb27",
+          "ingredientName": "s",
+          "description": "s",
+          "strength": "medium",
+          "flavor": "s",
+          "price": 2
         }
-      ]
+      ],
+      "id": "562f"
     }
   ],
   "ingredientData": [
@@ -141,6 +84,22 @@
       "strength": "medium",
       "flavor": "Milky",
       "price": 23
+    },
+    {
+      "id": "3159",
+      "ingredientName": "Test ing",
+      "description": "Test Ing Desc",
+      "strength": "strong",
+      "flavor": "Testy",
+      "price": 23
+    },
+    {
+      "id": "cb27",
+      "ingredientName": "s",
+      "description": "s",
+      "strength": "medium",
+      "flavor": "s",
+      "price": 2
     }
   ]
 }

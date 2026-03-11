@@ -11,9 +11,18 @@ function UpdateCoffeeDataForm() {
   const [price, setPrice] = useState(0);
   const [caffeine, setCaffeine] = useState(0);
   const [ingredients, setIngredients] = useState([]);
+  const [allIngredients, setAllIngredients] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
+
   const params = useParams();
   const navigate = useNavigate();
+
+  // All Ingredients
+  useEffect(() => {
+    fetch(`http://localhost:3000/ingredientData`)
+      .then((response) => response.json())
+      .then((data) => setAllIngredients(data));
+  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:3000/coffeeData/${params.id}`)
@@ -22,6 +31,7 @@ function UpdateCoffeeDataForm() {
         (setCaffeine(data.caffeine),
           setImageUrl(data.imageUrl),
           setIngredients(data.ingredients),
+          setSelectedIngredients(data.ingredients),
           setPrice(data.price),
           setDescription(data.description),
           setCountryOfOrigin(data.countryOfOrigin),
@@ -52,10 +62,11 @@ function UpdateCoffeeDataForm() {
         break;
       case "ingredients": {
         const selected = Array.from(e.target.selectedOptions, (option) =>
-          ingredients.find(
+          allIngredients.find(
             (ingredient) => ingredient.ingredientName === option.value,
           ),
         );
+
         setSelectedIngredients(selected);
         break;
       }
@@ -75,7 +86,9 @@ function UpdateCoffeeDataForm() {
         imageUrl,
         price,
         caffeine,
-        ingredients: selectedIngredients,
+        ingredients: selectedIngredients.length
+          ? selectedIngredients
+          : ingredients,
       }),
     }).then((response) => {
       if (!response.ok) {
@@ -87,6 +100,13 @@ function UpdateCoffeeDataForm() {
     // Reset form fields
     navigate("/");
   };
+
+  const filteredIngredients = allIngredients.filter(
+    (ingredient) =>
+      !ingredients
+        .map((i) => i.ingredientName)
+        .includes(ingredient.ingredientName),
+  );
 
   return (
     <form className={Styles.form}>
@@ -171,20 +191,6 @@ function UpdateCoffeeDataForm() {
         />
       </div>
 
-      {/* <div className={Styles.input__group}>
-        <label htmlFor="ingredients">Ingredients</label>
-        <textarea
-          id="ingredients"
-          name="ingredients"
-          className={Styles.textarea}
-          value={ingredients}
-          onChange={(e) => handleInputChange(e)}
-        ></textarea>
-        <p className={Styles.input__description}>
-          Hold Ctrl (or Cmd) to select multiple ingredients
-        </p>
-      </div> */}
-
       <div className={Styles.input__group}>
         <label htmlFor="ingredients">Ingredients</label>
         <select
@@ -193,21 +199,11 @@ function UpdateCoffeeDataForm() {
           multiple
           onChange={(e) => handleInputChange(e)}
           className={Styles.textarea}
+          value={selectedIngredients.map((i) => i.ingredientName)}
         >
           {/* How to pass just selected ingredients not all of them */}
-          {ingredients.map((ingredient) => (
-            <option
-              key={ingredient.id}
-              value={ingredient.ingredientName}
-              style={{
-                backgroundColor: "gray",
-                color: "white",
-                padding: "4px 6px",
-                borderRadius: "3px",
-                marginBottom: "4px",
-                fontSize: "10px",
-              }}
-            >
+          {[...ingredients, ...filteredIngredients].map((ingredient) => (
+            <option key={ingredient.id} value={ingredient.ingredientName}>
               {ingredient.ingredientName} - {ingredient.price}
             </option>
           ))}

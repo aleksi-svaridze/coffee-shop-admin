@@ -32,6 +32,8 @@ export default function SingleItem() {
     return <p>Coffee not found ☕</p>;
   }
 
+  // console.log("coffeeDetail: ", coffeeDetail.ingredients[0].ingredientName);
+
   return (
     <main className="main">
       <Header
